@@ -16,4 +16,18 @@ class AppTest(TestCase):
         response = client.get('/hello')
     
         # assert
-        self.assertEquals(200, response.status_code)    
+        self.assertEquals(200, response.status_code)
+        
+    def test_hello_world_view(self):
+        '''
+        Check if app view required content
+        '''
+        
+        # arrange
+        client = Client()
+        
+        # act
+        response = client.get('/hello')
+        
+        # assert
+        self.assertEquals('Hello World!', response.content)
