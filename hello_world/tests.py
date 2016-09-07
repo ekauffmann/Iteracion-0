@@ -30,4 +30,4 @@ class AppTest(TestCase):
         response = client.get('/hello')
         
         # assert
-        self.assertEquals('Hello World!', response.content)
+        self.assertIn('Hello World!', response.content)
